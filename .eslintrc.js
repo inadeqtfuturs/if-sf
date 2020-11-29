@@ -1,0 +1,54 @@
+module.exports = {
+  extends: ['airbnb', 'plugin:prettier/recommended', 'prettier/react'],
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    jest: true,
+    node: true
+  },
+  root: true,
+  rules: {
+    'jsx-a11y/href-no-hash': ['off'],
+    'react/jsx-filename-extension': [
+      'warn',
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
+    ],
+    'react/no-unescaped-entities': ['off'],
+    'react/jsx-props-no-spreading': ['off'],
+    'react/jsx-pascal-case': ['off'],
+    'react/forbid-prop-types': ['off'],
+    'import/no-extraneous-dependencies': [
+      'warn',
+      {
+        devDependencies: ['.storybook/**', 'stories/**']
+      }
+    ],
+    'max-len': [
+      'warn',
+      {
+        code: 80,
+        tabWidth: 2,
+        comments: 80,
+        ignoreComments: false,
+        ignoreTrailingComments: true,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: true
+      }
+    ]
+  },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@components', './src/components/'],
+          ['@theme', './src/theme/'],
+          ['@utils', './src/utils/']
+        ],
+        extensions: ['.ts', '.js', '.jsx', '.json']
+      }
+    }
+  }
+};

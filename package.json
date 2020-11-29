@@ -1,0 +1,48 @@
+{
+  "name": "if-sf",
+  "version": "0.0.1",
+  "description": "speculative fabulation",
+  "author": "if",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --fix . && echo 'linted 💯'",
+    "test": "jest",
+    "testing": "jest --watchAll",
+    "stories": "start-storybook -p 6006",
+    "build-stories": "build-storybook"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.1.1",
+    "@emotion/styled": "^11.0.0",
+    "@theme-ui/color": "^0.3.4",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-system": "^5.1.5",
+    "theme-ui": "^0.3.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@storybook/addon-actions": "^6.1.6",
+    "@storybook/addon-essentials": "^6.1.6",
+    "@storybook/addon-links": "^6.1.6",
+    "@storybook/react": "^6.1.6",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.1",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.0",
+    "react-test-renderer": "^17.0.1"
+  }
+}
