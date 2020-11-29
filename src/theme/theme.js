@@ -1,19 +1,12 @@
-import {
-  defaultColors,
-  genColors,
-  defaultBreakpoints,
-  genBreakpoints
-} from '@theme/tokens';
-
-import { defaultButtonStyles, genButton } from '@theme/components';
+import { genColors, genBreakpoints } from '@theme/tokens';
+import { genButton } from '@theme/components';
 
 function genTheme(
   theme = {
-    colors: defaultColors,
-    breakpoints: defaultBreakpoints,
+    colors: {},
+    breakpoints: {},
     components: {
-      button: ({ styles = { ...defaultButtonStyles }, ...props }) =>
-        genButton({ styles, ...props })
+      button: props => genButton(props)
     }
   }
 ) {

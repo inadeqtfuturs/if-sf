@@ -61,9 +61,7 @@ export const defaultButtonStyles = {
 };
 
 export function genButton(props) {
-  const { styles } = props;
-
-  return mergeStyles(defaultButtonStyles, styles, props);
+  return mergeStyles(defaultButtonStyles, props);
 }
 
 export default defaultButtonStyles;

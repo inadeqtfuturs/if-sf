@@ -14,27 +14,25 @@ const defaultProps = {
 };
 
 it('extends the default styles', () => {
-  const result = mergeStyles(
-    defaultButtonStyles,
-    { borderColor: 'red' },
-    defaultProps
-  );
+  const result = mergeStyles(defaultButtonStyles, {
+    ...defaultProps,
+    styles: { borderColor: 'red' }
+  });
 
   expect(result).toHaveProperty('borderColor', 'red');
 });
 
 it('merges styles into default styles', () => {
-  const result = mergeStyles(
-    defaultButtonStyles,
-    { display: 'inline' },
-    defaultProps
-  );
+  const result = mergeStyles(defaultButtonStyles, {
+    ...defaultProps,
+    styles: { display: 'inline' }
+  });
 
   expect(result).toHaveProperty('display', 'inline');
 });
 
 it('overrides just the styles, not variants', () => {
-  const result = mergeStyles(defaultButtonStyles, null, {
+  const result = mergeStyles(defaultButtonStyles, {
     ...defaultProps,
     override: { styles: { display: 'flex' } }
   });
@@ -44,9 +42,10 @@ it('overrides just the styles, not variants', () => {
 });
 
 it('extends the variants', () => {
-  const result = mergeStyles(
-    defaultButtonStyles,
-    {
+  const result = mergeStyles(defaultButtonStyles, {
+    ...defaultProps,
+    type: 'novel',
+    styles: {
       variants: [
         {
           buttonType: () =>
@@ -61,12 +60,11 @@ it('extends the variants', () => {
             })
         }
       ]
-    },
-    { ...defaultProps, type: 'novel' }
-  );
-  const defaultResult = mergeStyles(
-    defaultButtonStyles,
-    {
+    }
+  });
+  const defaultResult = mergeStyles(defaultButtonStyles, {
+    ...defaultProps,
+    styles: {
       variants: [
         {
           buttonType: () =>
@@ -81,9 +79,8 @@ it('extends the variants', () => {
             })
         }
       ]
-    },
-    defaultProps
-  );
+    }
+  });
 
   expect(result).toHaveProperty('color', 'red');
   expect(result).toHaveProperty('backgroundColor', 'green');
@@ -91,9 +88,9 @@ it('extends the variants', () => {
 });
 
 it('merges variants', () => {
-  const result = mergeStyles(
-    defaultButtonStyles,
-    {
+  const result = mergeStyles(defaultButtonStyles, {
+    ...defaultProps,
+    styles: {
       variants: [
         {
           buttonType: () =>
@@ -108,16 +105,15 @@ it('merges variants', () => {
             })
         }
       ]
-    },
-    defaultProps
-  );
+    }
+  });
 
   expect(result).toHaveProperty('color', 'red');
   expect(result).toHaveProperty('backgroundColor', 'green');
 });
 
 it('overrides variants', () => {
-  const result = mergeStyles(defaultButtonStyles, null, {
+  const result = mergeStyles(defaultButtonStyles, {
     ...defaultProps,
     override: {
       variants: [

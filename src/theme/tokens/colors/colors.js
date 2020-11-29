@@ -13,6 +13,9 @@ export function genColors({ override, ...restColors }) {
   if (override) {
     return override;
   }
+  if (!restColors) {
+    return defaultColors;
+  }
   return merge(defaultColors, restColors);
 }
 

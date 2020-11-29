@@ -36,16 +36,20 @@ function genContentWidths(bp) {
 
 export function genBreakpoints({ override, breakpoints: bps }) {
   const { breakpoints: defaultBps } = defaultBreakpoints;
+  if (!bps && !override) {
+    return {
+      breakpoints: genBreakpointArray(defaultBps),
+      contentWidths: genContentWidths(defaultBps),
+      mediaQueries: genMediaQueries(defaultBps)
+    };
+  }
   const mergedBreakpoints = override
     ? override.breakpoints
     : mergeUniqueKey(defaultBps, bps, 'key', 'val');
-  const breakpoints = genBreakpointArray(mergedBreakpoints);
-  const mediaQueries = genMediaQueries(mergedBreakpoints);
-  const contentWidths = genContentWidths(mergedBreakpoints);
   return {
-    breakpoints,
-    contentWidths,
-    mediaQueries
+    breakpoints: genBreakpointArray(mergedBreakpoints),
+    contentWidths: genContentWidths(mergedBreakpoints),
+    mediaQueries: genMediaQueries(mergedBreakpoints)
   };
 }
 

@@ -11,9 +11,9 @@ export function mapVariants(variants, props) {
   }, {});
 }
 
-function mergeStyles(defaultStyles, styles, props) {
+function mergeStyles(defaultStyles, props) {
+  const { styles, override: overrideStyles } = props || {};
   const { variants, ...rest } = styles || {};
-  const { override: overrideStyles } = props;
   const { variants: defaultVariants, ...defaultRest } = defaultStyles;
 
   const mergedStyles =
