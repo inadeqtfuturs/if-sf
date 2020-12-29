@@ -9,7 +9,7 @@ const defaultColors = {
   muted: '#88d1ff'
 };
 
-export function genColors({ override, ...restColors }) {
+export function genColors({ override, ...restColors } = {}) {
   if (override) {
     return override;
   }

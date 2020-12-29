@@ -1,7 +1,7 @@
 import { defaultBreakpoints, genBreakpoints } from '@theme/tokens';
 
 it('generates array of breakpoints', () => {
-  const { breakpoints } = genBreakpoints(defaultBreakpoints);
+  const { breakpoints } = genBreakpoints();
   expect(breakpoints).toHaveLength(defaultBreakpoints.breakpoints.length);
 });
 

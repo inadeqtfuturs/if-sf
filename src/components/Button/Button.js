@@ -34,8 +34,7 @@ Button.propTypes = {
    */
   children: PropTypes.string,
   /**
-   * takes one of 'primary', 'secondary', 'accent', 'muted'. corresponds
-   * to theme colors
+   * corresponds to theme colors
    */
   color: PropTypes.oneOf(['primary', 'secondary', 'accent', 'muted']),
   /**

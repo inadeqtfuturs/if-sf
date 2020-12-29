@@ -1,1 +1,1 @@
-export { default as defaultButtonStyles, genButton } from './button/button';
+export { default as defaultButtonStyles, genButton } from './button';

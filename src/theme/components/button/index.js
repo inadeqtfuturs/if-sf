@@ -41,18 +41,18 @@ export const defaultButtonStyles = {
             sm: {
               px: 2,
               py: 1,
-              fontSize: 0,
+              fontSize: 'xs',
               minWidth: 'auto'
             },
             md: {
               px: 3,
               py: 2,
-              fontSize: 1
+              fontSize: 'sm'
             },
             lg: {
               px: 4,
               py: 3,
-              fontSize: 2
+              fontSize: 'md'
             }
           }
         })

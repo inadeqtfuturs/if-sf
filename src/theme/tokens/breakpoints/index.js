@@ -34,9 +34,12 @@ function genContentWidths(bp) {
   return [null, ...widths];
 }
 
-export function genBreakpoints({ override, breakpoints: bps }) {
+export function genBreakpoints({
+  breakpoints: passedBreakpoints,
+  override
+} = {}) {
   const { breakpoints: defaultBps } = defaultBreakpoints;
-  if (!bps && !override) {
+  if (!passedBreakpoints && !override) {
     return {
       breakpoints: genBreakpointArray(defaultBps),
       contentWidths: genContentWidths(defaultBps),
@@ -45,7 +48,7 @@ export function genBreakpoints({ override, breakpoints: bps }) {
   }
   const mergedBreakpoints = override
     ? override.breakpoints
-    : mergeUniqueKey(defaultBps, bps, 'key', 'val');
+    : mergeUniqueKey(defaultBps, passedBreakpoints, 'key', 'val');
   return {
     breakpoints: genBreakpointArray(mergedBreakpoints),
     contentWidths: genContentWidths(mergedBreakpoints),

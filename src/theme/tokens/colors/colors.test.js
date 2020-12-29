@@ -1,7 +1,7 @@
 import { defaultColors, genColors } from '@theme/tokens';
 
 it('generates a colors object', () => {
-  const colors = genColors(defaultColors);
+  const colors = genColors();
   expect(colors).toEqual({ ...defaultColors });
 });
 

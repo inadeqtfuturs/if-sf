@@ -23,13 +23,32 @@ generate themes, theme objects, and theme tokens
 ```js
 import { genColors } from '@theme/tokens';
 
-const colors = genColors(); // returns default colors object
+const colors = genColors();
+/**
+ * returns generic color object
+ * 
+ * colors = { 
+ *  text: '#111827',
+ *  background: '#F9FAFB',
+ *  primary: '#2563EB',
+ *  secondary: '#de7283',
+ *  accent: '#7C3AED',
+ *  muted: '#88d1ff'
+ * }
+ * 
+ */
 const mergeColors = genColors({ primary: 'red' }); // replaces 'primary' key in colors object
 const extendColors = genColors({ red: 'red' }); // adds 'red' key to colors object
 const overrideColors = genColors({ override: { red: 'red' }}); // replaces color object with override object
 ```
 
 We can do similar things with more complicated tokens. Checkout the tests for the [button component](src/theme/components/button/button.test.js) and [breakpoints](src/theme/tokens/breakpoints/breakpoints.test.js) to see how `sf` handles overrides and merges.
+
+### tl;dr
+
+- Put object in, get object out
+- Merge your object or
+- Override tokens wholesale
 
 ## patterns
 
@@ -65,5 +84,10 @@ Because `mergeStyles()` just returns a styles object, we can opt-in to variants 
 - tokens
   - colors
   - breakpoints
+  - space
+  - typography
+- markdown
+  - text (p, li, ol, blockquote, small, link)
+  - headings
 - components
   - button
