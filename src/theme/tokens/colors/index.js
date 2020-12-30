@@ -10,13 +10,10 @@ const defaultColors = {
 };
 
 export function genColors({ override, ...restColors } = {}) {
-  if (override) {
-    return override;
-  }
-  if (!restColors) {
+  if (!override && !restColors) {
     return defaultColors;
   }
-  return merge(defaultColors, restColors);
+  return override || merge(defaultColors, restColors);
 }
 
 export default defaultColors;
