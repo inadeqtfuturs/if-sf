@@ -1,4 +1,4 @@
-import { merge } from 'theme-ui';
+import { css, merge } from 'theme-ui';
 
 export function mapVariants(variants, props) {
   return variants.reduce((acc, styleVariation) => {
@@ -18,8 +18,8 @@ function mergeStyles(defaultStyles, props) {
 
   const mergedStyles =
     overrideStyles && overrideStyles.styles
-      ? { ...overrideStyles.styles }
-      : merge(defaultRest, rest);
+      ? css({ ...overrideStyles.styles })(props.theme)
+      : css(merge(defaultRest, rest))(props.theme);
 
   if (overrideStyles && overrideStyles.variants) {
     const mappedVariants = mapVariants(overrideStyles.variants, props);

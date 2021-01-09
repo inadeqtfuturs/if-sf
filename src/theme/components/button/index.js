@@ -1,4 +1,5 @@
 import { variant } from 'styled-system';
+import { css, get } from 'theme-ui';
 import { darken } from '@theme-ui/color';
 import { mergeStyles } from '@utils';
 
@@ -7,20 +8,34 @@ export const defaultButtonStyles = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  border: 'none',
+  border: 'thin',
+  borderColor: 'transparent',
+  borderRadius: 'default',
   '&:disabled': {
     opacity: '0.85',
     pointerEvents: 'none'
   },
   variants: [
     {
-      buttonType: ({ color }) =>
+      buttonType: ({ color, theme }) =>
         variant({
           prop: 'type',
           variants: {
             default: {
               color: 'background',
-              bg: color
+              border: 'thin',
+              borderColor: color,
+              bg: color,
+              '&:hover': {
+                bg: darken(color, 0.04)
+              },
+              '&:active': {
+                bg: darken(color, 0.08)
+              },
+              '&:focus': {
+                boxShadow: `0 0 4px 1px ${get(theme, `colors.${color}`)}`,
+                outline: 'none'
+              }
             },
             outline: {
               color,

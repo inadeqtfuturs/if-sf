@@ -83,7 +83,9 @@ Because `mergeStyles()` just returns a styles object, we can opt-in to variants 
 
 - tokens
   - colors
+  - borders
   - breakpoints
+  - radii
   - space
   - typography
 - markdown

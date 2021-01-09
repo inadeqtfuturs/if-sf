@@ -16,10 +16,10 @@ const defaultProps = {
 it('extends the default styles', () => {
   const result = mergeStyles(defaultButtonStyles, {
     ...defaultProps,
-    styles: { borderColor: 'red' }
+    styles: { outline: 'red' }
   });
 
-  expect(result).toHaveProperty('borderColor', 'red');
+  expect(result).toHaveProperty('outline', 'red');
 });
 
 it('merges styles into default styles', () => {
@@ -38,7 +38,7 @@ it('overrides just the styles, not variants', () => {
   });
 
   expect(result).toHaveProperty('display', 'flex');
-  expect(result).not.toHaveProperty('border');
+  expect(result).not.toHaveProperty('alignItems');
 });
 
 it('extends the variants', () => {

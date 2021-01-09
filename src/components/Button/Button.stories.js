@@ -6,7 +6,19 @@ export default {
   component: Button
 };
 
-const Template = args => <Button {...args} />;
+const Template = args => (
+  <>
+    <div style={{ marginBottom: '1rem' }}>
+      <Button {...args} size="sm" />
+    </div>
+    <div style={{ marginBottom: '1rem' }}>
+      <Button {...args} size="md" />
+    </div>
+    <div style={{ marginBottom: '1rem' }}>
+      <Button {...args} size="lg" />
+    </div>
+  </>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

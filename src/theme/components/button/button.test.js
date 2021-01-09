@@ -20,10 +20,10 @@ describe('button tests', () => {
   it('can merge styles', () => {
     const button = genButton({
       ...defaultProps,
-      styles: { border: '1px solid green' }
+      styles: { outline: '1px solid green' }
     });
     expect(button).toHaveProperty('color', '#F9FAFB');
-    expect(button).toHaveProperty('border', '1px solid green');
+    expect(button).toHaveProperty('outline', '1px solid green');
   });
 
   it('can be overriden by passing an "override" object', () => {
