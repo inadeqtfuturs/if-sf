@@ -8,6 +8,7 @@ const defaultTypography = {
     monospace: 'Menlo, monospace'
   },
   fontSizes: {
+    '2xs': 0.625,
     xs: 0.75,
     sm: 0.875,
     md: 1,

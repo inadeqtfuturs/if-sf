@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@components';
 
 export default {
-  title: 'sf/Button',
+  title: 'components/button',
   component: Button
 };
 

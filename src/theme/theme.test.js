@@ -12,3 +12,11 @@ it('generates the theme', () => {
   expect(theme).toHaveProperty('components');
   expect(theme.components).toHaveProperty('button', expect.any(Function));
 });
+
+it('allows you to remove tokens w/ null', () => {
+  const theme = genTheme({ colors: null, components: null });
+  expect(theme).not.toHaveProperty('colors');
+  expect(theme).not.toHaveProperty('components');
+  expect(theme).toHaveProperty('borders');
+  expect(theme).toHaveProperty('breakpoints');
+});

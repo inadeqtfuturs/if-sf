@@ -1,3 +1,4 @@
+import { get } from 'theme-ui';
 import { genTheme } from '@theme';
 import { genButton } from '@theme/components';
 
@@ -14,7 +15,8 @@ const defaultProps = {
 describe('button tests', () => {
   it('it generates button styles', () => {
     const button = genButton({ ...defaultProps });
-    expect(button).toHaveProperty('color', '#F9FAFB');
+    const background = get(defaultProps.theme, `colors.background`);
+    expect(button).toHaveProperty('color', background);
   });
 
   it('can merge styles', () => {
@@ -22,7 +24,8 @@ describe('button tests', () => {
       ...defaultProps,
       styles: { outline: '1px solid green' }
     });
-    expect(button).toHaveProperty('color', '#F9FAFB');
+    const background = get(defaultProps.theme, `colors.background`);
+    expect(button).toHaveProperty('color', background);
     expect(button).toHaveProperty('outline', '1px solid green');
   });
 

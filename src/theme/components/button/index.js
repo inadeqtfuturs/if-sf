@@ -1,5 +1,5 @@
 import { variant } from 'styled-system';
-import { css, get } from 'theme-ui';
+import { get } from 'theme-ui';
 import { darken } from '@theme-ui/color';
 import { mergeStyles } from '@utils';
 
