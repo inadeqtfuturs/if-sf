@@ -93,3 +93,5 @@ Because `mergeStyles()` just returns a styles object, we can opt-in to variants 
   - headings
 - components
   - button
+  - tag
+  - text input
