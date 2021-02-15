@@ -8,7 +8,7 @@ import {
   genText,
   genHeadings
 } from '@theme/tokens';
-import { genButton, genTag } from '@theme/components';
+import { genButton, genTag, genTextInput } from '@theme/components';
 
 function hasValue(obj) {
   return obj !== null;
@@ -30,7 +30,8 @@ function genTheme(
     headings: {},
     components: {
       button: props => genButton(props),
-      tag: props => genTag(props)
+      tag: props => genTag(props),
+      textInput: props => genTextInput(props)
     }
   }
 ) {
