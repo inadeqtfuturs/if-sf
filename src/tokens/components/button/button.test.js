@@ -1,6 +1,6 @@
 import { get } from 'theme-ui';
 import { genTheme } from '@theme';
-import { genButton } from '@theme/components';
+import { genButton } from '@tokens/components';
 
 const defaultProps = {
   children: null,

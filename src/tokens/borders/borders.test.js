@@ -1,4 +1,4 @@
-import { defaultBorders, genBorders } from '@theme/tokens';
+import { defaultBorders, genBorders } from '@tokens';
 
 it('returns space object', () => {
   const borders = genBorders();

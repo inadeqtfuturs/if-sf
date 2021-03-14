@@ -1,4 +1,4 @@
-import { defaultText, genText } from '@theme/tokens';
+import { defaultText, genText } from '@tokens';
 
 it('returns text style object', () => {
   const text = genText();

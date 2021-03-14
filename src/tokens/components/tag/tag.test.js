@@ -1,6 +1,6 @@
 import { get } from 'theme-ui';
 import { genTheme } from '@theme';
-import { genTextInput } from '@theme/components';
+import { genTag } from '@tokens/components';
 
 const defaultProps = {
   children: null,
@@ -9,11 +9,11 @@ const defaultProps = {
   theme: genTheme()
 };
 
-describe('input tests', () => {
+describe('tag tests', () => {
   it('it generates tag styles', () => {
-    const input = genTextInput({ ...defaultProps });
+    const tag = genTag({ ...defaultProps });
     const text = get(defaultProps.theme, `colors.text`);
-    expect(input).toHaveProperty('color', text);
+    expect(tag).toHaveProperty('color', text);
   });
 
   it.skip('can merge styles', () => {

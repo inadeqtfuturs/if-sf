@@ -1,6 +1,6 @@
 import { variant } from 'styled-system';
 import { genTheme } from '@theme';
-import { defaultButtonStyles } from '@theme/components';
+import { defaultButtonStyles } from '@tokens/components';
 import { mergeStyles } from '@utils';
 
 const defaultProps = {

@@ -1,4 +1,4 @@
-import { defaultRadii, genRadii } from '@theme/tokens';
+import { defaultRadii, genRadii } from '@tokens';
 
 it('returns space object', () => {
   const radii = genRadii();

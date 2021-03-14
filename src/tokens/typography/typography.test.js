@@ -1,4 +1,4 @@
-import { defaultTypography, genTypography } from '@theme/tokens';
+import { defaultTypography, genTypography } from '@tokens';
 import { get } from 'theme-ui';
 
 it('generates typography object', () => {

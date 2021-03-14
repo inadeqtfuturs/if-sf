@@ -44,7 +44,8 @@ module.exports = {
       alias: {
         map: [
           ['@components', './src/components/'],
-          ['@theme', './src/theme/'],
+          ['@theme', './src/'],
+          ['@tokens', './src/tokens/'],
           ['@utils', './src/utils/']
         ],
         extensions: ['.ts', '.js', '.jsx', '.json']
