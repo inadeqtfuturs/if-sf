@@ -14,7 +14,7 @@
     "stories": "start-storybook -p 6006",
     "build-stories": "build-storybook",
     "build": "rm -rf build && rollup --config && yarn copy-package && yarn copy-readme",
-    "publish": "cd build && npm publish"
+    "publish": "yarn build && cd build && npm publish"
   },
   "dependencies": {
     "@babel/runtime": "^7.12.18",
