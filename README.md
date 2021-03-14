@@ -8,11 +8,42 @@ generate themes, theme objects, and theme tokens
 
 ---
 
+- [quick start](#quick-start)
 - [motivations](#motivations)
 - [patterns](#patterns)
 - [current tokens](#current-tokens)
 
 ---
+
+## quick start
+
+```bash
+yarn add if-sf
+```
+
+Wherever you're defining your theme:
+
+```js
+import { ThemeProvider } from 'theme-ui';
+import { genTheme } from 'if-sf';
+
+const theme = genTheme();
+
+function MyApp() {
+  return (
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  )
+}
+```
+
+If you need access to more granular primitives, you can import individual generators and components:
+
+```js
+import { Button } from 'if-sf/components';
+import { defaultButtonStyles, genButton } from 'if-sf/tokens';
+```
 
 ## motivations
 
@@ -51,8 +82,6 @@ We can do similar things with more complicated tokens. Checkout the tests for th
 - Override tokens wholesale
 
 ## patterns
-
-In its current state, `sf` is more of a series of patterns for thinking about generating themes than a full solution. Below are some snippets that it uses.
 
 ### merge styles // map variants
 

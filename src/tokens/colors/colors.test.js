@@ -1,4 +1,4 @@
-import { defaultColors, genColors } from '@theme/tokens';
+import { defaultColors, genColors } from '@tokens';
 
 it('generates a colors object', () => {
   const colors = genColors();

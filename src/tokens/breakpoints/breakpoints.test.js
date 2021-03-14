@@ -1,4 +1,4 @@
-import { defaultBreakpoints, genBreakpoints } from '@theme/tokens';
+import { defaultBreakpoints, genBreakpoints } from '@tokens';
 
 it('generates array of breakpoints', () => {
   const { breakpoints } = genBreakpoints();

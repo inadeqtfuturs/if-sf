@@ -11,6 +11,11 @@
 #storybook
 storybook-static
 
+# rollup
+bundle.js
+/build/
+/dist/
+
 # next.js
 /.next/
 /out/

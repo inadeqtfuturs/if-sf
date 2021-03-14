@@ -2,6 +2,7 @@ module.exports = {
   presets: ['@babel/preset-env', '@babel/preset-react'],
   babelrcRoots: ['./'],
   plugins: [
+    '@babel/plugin-transform-runtime',
     [
       'module-resolver',
       {
@@ -10,7 +11,8 @@ module.exports = {
           '@components': './src/components',
           '@config': './src/config',
           '@layouts': './src/layouts',
-          '@theme': './src/theme',
+          '@theme': './src',
+          '@tokens': './src/tokens',
           '@utils': './src/utils'
         }
       }

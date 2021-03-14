@@ -1,4 +1,4 @@
-import { defaultSpace, genSpace } from '@theme/tokens';
+import { defaultSpace, genSpace } from '@tokens';
 
 it('returns space object', () => {
   const space = genSpace();

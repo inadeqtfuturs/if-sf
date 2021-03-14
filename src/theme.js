@@ -7,8 +7,8 @@ import {
   genTypography,
   genText,
   genHeadings
-} from '@theme/tokens';
-import { genButton, genTag, genTextInput } from '@theme/components';
+} from '@tokens';
+import { genButton, genTag, genTextInput } from '@tokens/components';
 
 function hasValue(obj) {
   return obj !== null;

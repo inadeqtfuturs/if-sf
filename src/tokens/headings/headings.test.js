@@ -1,4 +1,4 @@
-import { defaultHeadings, genHeadings } from '@theme/tokens';
+import { defaultHeadings, genHeadings } from '@tokens';
 
 it('returns headings object', () => {
   const headings = genHeadings();
