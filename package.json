@@ -13,8 +13,7 @@
     "testing": "jest --watchAll",
     "stories": "start-storybook -p 6006",
     "build-stories": "build-storybook",
-    "build": "rm -rf build && rollup --config && yarn copypackage",
-    "copypackage": "cp -rf package.json build",
+    "build": "rm -rf build && rollup --config && yarn copy-package && yarn copy-readme",
     "publish": "cd build && npm publish"
   },
   "dependencies": {
