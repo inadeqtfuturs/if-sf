@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import resolve from '@rollup/plugin-node-resolve';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { babel } from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
@@ -22,6 +22,7 @@ export default [
         format: 'cjs',
         sourcemap: true,
         exports: 'named',
+        // entryFileNames: '[name].[format].js',
         preserveModulesRoot: 'src/'
       },
       {
@@ -29,14 +30,15 @@ export default [
         format: 'esm',
         sourcemap: true,
         exports: 'named',
-        // entryFileNames: 'index.es.js',
+        entryFileNames: '[name].[format].js',
         preserveModulesRoot: 'src/'
       }
     ],
     preserveModules: true,
+    external: ['prop-types', '@theme-ui/color', /@babel\/runtime/],
     plugins: [
       peerDepsExternal(),
-      resolve(),
+      nodeResolve(),
       babel({
         babelHelpers: 'runtime',
         plugins: ['@babel/plugin-transform-runtime'],

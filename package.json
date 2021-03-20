@@ -1,20 +1,22 @@
 {
   "name": "if-sf",
-  "version": "0.1.0",
+  "version": "0.2.10",
   "description": "speculative fabulation",
   "author": "if",
   "license": "MIT",
   "private": false,
   "main": "index.js",
   "module": "index.es.js",
+  "files": [
+    "/"
+  ],
   "scripts": {
     "lint": "eslint --fix . && echo 'linted 💯'",
     "test": "jest",
     "testing": "jest --watchAll",
     "stories": "start-storybook -p 6006",
     "build-stories": "build-storybook",
-    "build": "rm -rf build && rollup --config && cp -rf package.json build && cp -rf README.md build",
-    "publish": "yarn build && cd build && npm publish"
+    "build": "rm -rf build && rollup --config && cp -rf package.json build && cp -rf README.md build"
   },
   "dependencies": {
     "@babel/runtime": "^7.12.18",
